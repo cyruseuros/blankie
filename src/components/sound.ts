@@ -20,31 +20,10 @@ export default define<Sound>({
       </template>
     `}
   `.css`
-    input[type="range"] {
-      -webkit-appearance: none;
-      appearance: none;
-      background: transparent;
-      cursor: pointer;
-      width: 100%;
-    }
-
-    input[type="range"]::-webkit-slider-runnable-track,
-    input[type="range"]::-moz-range-track {
-      background: var(--color-dark);
-      color: var(--color-accent);
+    input[type=range] {
       accent-color: var(--color-accent);
-      height: 1px;
-    }
-
-    input[type="range"]::-webkit-slider-thumb,
-    input[type="range"]::-moz-range-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      border: none;
-      border-radius: 50%;
-      height: 1rem;
-      width: 1rem;
-      background-color: var(--color-accent);
+      background: transparent;
+      width: 100%;
     }
   `
 })
