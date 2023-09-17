@@ -16,6 +16,7 @@ export default define<Sound>({
         <div layout="row gap:1 items:center content:center">
           <div>${e.sound?.emoji}</div>
           <div>${e.sound?.name}</div>
+          ${e.sound?.audio}
         </div>
       </template>
     `}
