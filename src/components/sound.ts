@@ -11,13 +11,13 @@ export default define<Sound>({
   render: e => html`
     ${store.ready(e.sound) && html`
       <template layout>
+        <div layout="row gap:1 items:center content:center">
+          <div style="font-size: 20pt">${e.sound?.emoji}</div>
+          <div>${e.sound?.name}</div>
+        </div>
         <input type="range" min="0" max="100"
           value="${e.sound?.volume}" oninput="${html.set(e.sound, 'volume')}">
-        <div layout="row gap:1 items:center content:center">
-          <div>${e.sound?.emoji}</div>
-          <div>${e.sound?.name}</div>
-          ${e.sound?.audio}
-        </div>
+        ${e.sound?.audio}
       </template>
     `}
   `.css`
