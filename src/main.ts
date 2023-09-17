@@ -6,10 +6,10 @@ interface App {
 }
 
 const App = define<App>({
-  tag: 'app-container',
+  tag: 'app-root',
   stack: router(Home),
   content: e => html`
-    <template layout="column">
+    <template layout="column items:center ::background-color:accent">
       ${e.stack}
     </template>
   `

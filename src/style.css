@@ -1,0 +1,36 @@
+@import "@catppuccin/palette/style";
+
+:root {
+  --color-accent: var(--ctp-frappe-rosewater);
+  --background-color-accent: var(--color-accent);
+
+  --color-bg: var(--ctp-frappe-base);
+  --background-color-bg: var(--color-bg);
+
+  --color-fg: var(--ctp-frappe-text);
+  --background-color-fg: var(--color-accent);
+
+  --border-radius-round: 50%;
+  --border-radius-gentle: 25px;
+
+  --color-dark: var(--ctp-frappe-crust);
+  --box-shadow-thick: 5px 5px 0 var(--color-dark);
+  --box-shadow-thin: 3px 3px 0 var(--color-dark);
+
+  --font-family-system:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    "Roboto",
+    "Ubuntu",
+    "Cantarell",
+    "Noto Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
+
+  font-family: var(--font-family-system);
+  color: var(--color-fg)
+}
