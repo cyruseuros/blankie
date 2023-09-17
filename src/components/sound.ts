@@ -15,9 +15,13 @@ export default define<Sound>({
           <div>${e.sound?.emoji}</div>
           <div>${e.sound?.name}</div>
         </div>
+
         <input type="range" min="0" max="100"
           value="${e.sound?.volume}" oninput="${html.set(e.sound, 'volume')}">
+
+        ${e.sound?.audio}
       </template>
     `}
+  `.css`
   `
 })

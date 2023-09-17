@@ -8,18 +8,17 @@ interface Fab {
 
 function togglePlay(e: Fab) {
   if (e.sounds) {
-    console.log('clicked')
     if (e.playing) {
-      e.playing = false
       for (const sound of e.sounds) {
         sound.audio.pause()
       }
     } else {
-      e.playing = true
       for (const sound of e.sounds) {
         sound.audio.play()
       }
     }
+
+    e.playing = !e.playing
   }
 }
 
