@@ -9,7 +9,7 @@ const App = define<App>({
   tag: 'app-root',
   stack: router(Home),
   content: e => html`
-    <template layout="column items:center ::background-color:accent">
+    <template layout="width:100% column items:center ::background-color:accent">
       ${e.stack}
     </template>
   `
