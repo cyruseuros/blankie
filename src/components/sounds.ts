@@ -14,7 +14,7 @@ export default define<Sounds>({
       layout="column
               items:center
               gap:1
-              width:max:min(85vw,500px)
+              width:max:min(85%,500px)
               ::background-color:bg
               ::border-radius:gentle
               ::box-shadow:thick padding:3">

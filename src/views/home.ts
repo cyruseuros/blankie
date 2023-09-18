@@ -7,7 +7,7 @@ interface Home { }
 export default define<Home>({
   tag: 'app-home',
   content: () => html`
-    <template layout="column items:center">
+    <template layout="column items:center width:100%">
       <img src="/icon.png" alt="blankie logo"/>
       <app-sounds></app-sounds>
       <app-fab></app-fab>
@@ -16,5 +16,12 @@ export default define<Home>({
         <p layout="margin:top:1 block:end">— 🐻</p>
       </footer>
     </template>
+  `.css`
+    img {
+      width: min(300px, 75%);
+      aspect-ratio: 1 / 1;
+      margin-top: -25px;
+      margin-bottom: -25px
+    }
   `,
 })
