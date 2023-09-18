@@ -40,7 +40,7 @@ function buildDefaultSound(id: DefaultSoundId): Partial<SoundModel> {
     id: id,
     name: noCase(id),
     emoji: defaultSoundsEmojis[id],
-    file: id + ".ogg",
+    file: id + ".mp3",
   }
 }
 
