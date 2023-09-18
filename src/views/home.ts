@@ -8,7 +8,7 @@ export default define<Home>({
   tag: 'app-home',
   content: () => html`
     <template layout="column items:center">
-      <h1 layout="::color:bg">🧸 blankie</h1>
+      <img src="/icon.png" alt="blankie logo"/>
       <app-sounds></app-sounds>
       <app-fab></app-fab>
       <footer layout="::color:bg margin:top:2 margin:bottom:4">

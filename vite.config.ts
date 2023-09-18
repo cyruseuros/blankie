@@ -5,6 +5,18 @@ export default defineConfig({
   plugins: [
     VitePWA({
       registerType: 'autoUpdate',
+      manifest: {
+        name: 'blankie',
+        description: 'zzz',
+        theme_color: '#f2d5cf',
+        icons: [
+          {
+            src: 'icon.png',
+            type: 'image/png',
+            sizes: "512x512",
+          }
+        ]
+      },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ogg}'],
         maximumFileSizeToCacheInBytes: 10_000_000,
