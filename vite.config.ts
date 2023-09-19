@@ -9,6 +9,7 @@ export default defineConfig({
         name: 'blankie',
         description: 'zzz',
         theme_color: '#f2d5cf',
+        background_color: '#f2d5cf',
         icons: [
           {
             src: 'icon.png',
