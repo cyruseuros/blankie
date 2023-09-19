@@ -7,7 +7,7 @@ interface Home { }
 export default define<Home>({
   tag: 'app-home',
   content: () => html`
-    <template layout="column items:center width:100%">
+    <template layout="column items:center">
       <img src="/icon.png" alt="blankie logo"/>
       <app-sounds></app-sounds>
       <app-fab></app-fab>

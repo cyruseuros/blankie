@@ -34,7 +34,3 @@
   font-family: var(--font-family-system);
   color: var(--color-fg)
 }
-
-body {
-  overflow-x: hidden !important;
-}
