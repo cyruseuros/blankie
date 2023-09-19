@@ -6,13 +6,18 @@ import defaultSoundsEmojis from '../assets/sounds.json'
 type DefaultSoundId = keyof typeof defaultSoundsEmojis
 type SoundId = string | DefaultSoundId
 
+interface AudioElement {
+  audio: HTMLAudioElement
+  gain: GainNode
+}
+
 interface SoundModel {
   id: SoundId
   name: string
   emoji: string
   file: string
   volume: number
-  audio: HTMLAudioElement
+  audio: AudioElement
 }
 
 const SoundModel: Model<SoundModel> = {
@@ -23,7 +28,7 @@ const SoundModel: Model<SoundModel> = {
   volume: store.value(0, n => n >= 0 && n <= 100, 'volume out of range'),
   audio: m => {
     const audio = getLoopingAudio(m.id, m.file)
-    audio.volume = m.volume / 100
+    audio.gain.gain.value = m.volume / 100
     return audio
   },
 
@@ -44,18 +49,25 @@ function buildDefaultSound(id: DefaultSoundId): Partial<SoundModel> {
   }
 }
 
-const audioCache: Record<string, HTMLAudioElement> = {}
+const audioCtx = new AudioContext()
+const audioCache: Record<string, AudioElement> = {}
 
-function getLoopingAudio(id: string, src: string): HTMLAudioElement {
+function getLoopingAudio(id: string, src: string): AudioElement {
   if (audioCache[id]) {
     return audioCache[id]
   }
 
   const audio = new Audio(src)
   audio.loop = true
-  audioCache[id] = audio
-  return audio
 
+  const source = audioCtx.createMediaElementSource(audio)
+  const gain = audioCtx.createGain()
+
+  source.connect(gain)
+  gain.connect(audioCtx.destination)
+
+  audioCache[id] = { audio, gain }
+  return audioCache[id]
 }
 
 export default SoundModel

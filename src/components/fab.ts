@@ -12,11 +12,11 @@ function togglePlay(e: Fab) {
   if (e.sounds) {
     if (e.playing) {
       for (const sound of e.sounds) {
-        sound.audio.pause()
+        sound.audio.audio.pause()
       }
     } else {
       for (const sound of e.sounds) {
-        sound.audio.play()
+        sound.audio.audio.play()
       }
     }
 
