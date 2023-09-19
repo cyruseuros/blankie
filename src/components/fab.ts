@@ -1,5 +1,6 @@
 import { store, define, html } from 'hybrids'
 import SoundModel from '../models/sound'
+import { audioCtx } from '../models/sound'
 
 interface Fab {
   playing: boolean
@@ -9,6 +10,10 @@ interface Fab {
 }
 
 function togglePlay(e: Fab) {
+  if (audioCtx.state === 'suspended') {
+    audioCtx.resume()
+  }
+
   if (e.sounds) {
     if (e.playing) {
       for (const sound of e.sounds) {

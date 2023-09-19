@@ -49,7 +49,7 @@ function buildDefaultSound(id: DefaultSoundId): Partial<SoundModel> {
   }
 }
 
-const audioCtx = new AudioContext()
+export const audioCtx = new AudioContext()
 const audioCache: Record<string, AudioElement> = {}
 
 function getLoopingAudio(id: string, src: string): AudioElement {
